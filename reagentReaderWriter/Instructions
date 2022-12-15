@@ -1,0 +1,2 @@
+Run the writer program in a zone you want to make a script for. Press 'K' for every place you want to tp to check for reagents. When done press 'L'. This will save the locations as a .txt file that can be shared and used in the Zones folder.
+Run the reagent farmer in a zone you have a .txt for and it will farm everything for you.
