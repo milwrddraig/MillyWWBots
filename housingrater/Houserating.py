@@ -2,6 +2,10 @@ import asyncio
 import wizwalker
 from random import randint
 from wizwalker import WizWalker
+from wizwalker.utils import XYZ
+
+oldetowntp = XYZ(x = -24.212629318237305, y = 2150.9998779296875, z = 0.0)
+
 
 async def rate(p):
     while len(await p.root_window.get_windows_with_name('Star4Button')) == 0:
@@ -21,14 +25,19 @@ async def clickok(p):
 
 async def main(p):
     while True:
+        if await p.zone_name() == 'Housing_WizardCommonsApt/House_WizardCommonsApt_Int':
+            await p.teleport(oldetowntp)
+            await asyncio.sleep(6)
         await rate(p)
+
         await asyncio.sleep(0.5)
         await p.mouse_handler.click_window_with_name('VisitAnotherCastleButton')
         await asyncio.sleep(5)
         await clickok(p)
         await asyncio.sleep(7)
         await clickok(p)
-        await asyncio.sleep(1)
+        await asyncio.sleep(2)
+
 
         
 
