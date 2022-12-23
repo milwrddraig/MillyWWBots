@@ -1,209 +1,208 @@
 import subprocess
-
 import asyncio
 import wizwalker
-import configparser
+import copy
 from time import time
 from wizwalker.constants import Keycode
 from wizwalker.utils import get_all_wizard_handles, start_instance, instance_login
 from modulardungeon import before_entry, in_dungeon, dungeonlist
-from wizwalker import Client
+from wizwalker import Client, XYZ
 
-activetasks=[]
+
+
+class clientInfo: #contains all information needed for a client to run
+    def __init__(self, username: str, password: str, handle, title: str, wizLst: list, totalAzothCollected: int, timeSinceBotAction: int):
+        self.username = username
+        self.password = password
+        self.handle = handle
+        self.title = title
+        self.wizLst = wizLst
+        self.totalAzothCollected = totalAzothCollected
+        self.timeSinceBotAction = timeSinceBotAction
+
+class wizardInfo: #contains all information of a wizard needed for differentiation and logic of the run
+    def __init__(self, wizardName: str, wizardLevel: str, wizardLocation: str, currentHappiness: int, totalHappiness: int):
+        self.Name = wizardName
+        self.Level = wizardLevel
+        self.Location = wizardLocation
+        self.Happiness = currentHappiness
+        self.totalHappiness = totalHappiness
+    def __str__(self):
+        return f'{removeTags(self.Name)} the {removeTags(self.Level)} in {removeTags(self.Location)}'
+
+
+#list that will contain every client
+activeClients=[]
+
+#list of all reagents names to allow for detection
 reagents = ["Wood","Stone","Mushroom","Ore","Cattail"
 ,"Mandrake","Parchment","Scraplron","Black Lotus","LavaLilly",
 "Frost Flower","Kelp","Pearl","Sandstone","Shell",
 "Agave","CometTail","Stardust","Antiquitie","Fulgurite"
-,"AetherDust","AetherOre","Artifacts"]
+,"AetherDust","AetherOre","Artifacts", 'Polygons']
 
-#config:
-config = configparser.ConfigParser()
-config.read('config.ini')
-rding = config['Settings']['Name or Level reading (N/L)']
-if rding == 'l':
-    rding = 'txtLevel'
-else:
-    rding = 'txtName'
-delay = float(config['Settings']['Delay (0 for none)'])
-tp = config['Settings']['Tp to reagent (t/f)']
-if tp == 't':
-    tp = True
-else:
-    tp = False
-lgn = config['Settings']['Use auto logon(t/f)']
-if lgn == 't':
-    lgn = True
-else:
-    lgn = False
 
-async def pet_power(p, delay=2):
-    await p.mouse_handler.click_window_with_name('UsePetPowerButton')
-    await p.mouse_handler.click_window_with_name('UsePetPowerButton')
-    await asyncio.sleep(delay)
-def remid(s):
-    s = s.replace('<center>','')
-    s = s.replace('</center>','')
-    return s
-def remtitle(s):
-    s = s.replace('AzothFarm: ','')
-    return s
-async def portallst(client,title):
-    lst = await client.get_base_entity_list()
-    sort = []
-    for f in lst:
-        if await f.object_name() in reagents:
-            print(f'[{remtitle(title)}] Reagent Detected:', await f.object_name())
-            sort += [f]
-            #return True , await f.location()
+
+locationList = []
+baseLocationList = [] #just includes the location name for simplicity
+
+with open('Locations.txt') as file:
+    lines = file.readlines()
+    for line in lines:
+        line = str(line)
+        locNames,farmtype,teleportXYZs = line.split('|')
+        for loc in locNames.split(':'):
+             
+            try: #have fun reading this, it creates a list of XYZs based on the string teleportXYZs
+                xyzTemp = [ XYZ(float(x.replace(' ','').split(',')[0]), float(x.replace(' ','').split(',')[1]), float(x.replace(' ','').split(',')[2])) for x in teleportXYZs.split(':')]
+            except:#if this throws up an error its likely there is no XYZ in the list which is valid, hence None
+                import traceback
+                traceback.print_exc()
+                xyzTemp = [None]
+            
+            
+            locationList += [[loc,farmtype,xyzTemp]] #packs everything back into the lists
+            baseLocationList += [loc]
+            
+
+
+
+
+
+async def petPower(client, delay=2): #clicks the power button
+    await client.mouse_handler.click_window_with_name('UsePetPowerButton')
+    await client.mouse_handler.click_window_with_name('UsePetPowerButton')
+    
+
+
+def removeTags(string):
+    return string.replace('</center>','').replace('<center>','')
+
+
+def removeTitle(string):
+    return string.replace('AzothFarm: ','')
+
+
+
+async def nearestReagent(client,title): #returns a boolean for whether a reagent was detected and the reagents location
+    entityList = await client.get_base_entity_list()
+    reagentList = []
+    for entity in entityList:
+        if await entity.object_name() in reagents:
+            print(f'[{removeTitle(title)}] Reagent Detected:', await entity.object_name())
+            reagentList += [entity]
         await asyncio.sleep(0)
-    if len(sort)== 0 :
+    if len(reagentList)== 0 :
         return False, None
     else: 
-        dist = 999999999.0
-        cloc = await client.body.position()
-        for f in sort :
-            floc = await f.location()
-            fdist = (floc.x - cloc.x)*(floc.x- cloc.x) + (floc.y- cloc.y)*(floc.y- cloc.y) + (floc.z- cloc.z)*(floc.z- cloc.z)
-            if fdist < dist:
-                dist = fdist
-                closest = floc
+        smallestDistance = 999999999.0
+        clientLocation = await client.body.position()
+        for reagent in reagentList :
+            reagentLocation = await reagent.location()
+            currentDistance = clientLocation - reagentLocation
+            if currentDistance < smallestDistance:
+                smallestDistance = currentDistance
+                closest = reagentLocation
         return True, closest
 
 
-async def logonload(p):
+'''async def logonload(p):
     while not await p.is_loading():
         print('waiting for loading screen')
         await asyncio.sleep(0.2)
     while await p.is_loading():
         print('waiting to get out of loading screen')
         await asyncio.sleep(0.2)
+''' #didnt work the way I wanted it to, may use later
 
-async def printentities(client):
-    lst = await client.get_base_entity_list()
-    for f in lst:
-        print(await f.object_name())
-        if await f.object_name() in reagents:
-            print(f'[{client.title}] Reagent Detected:', await f.object_name()) 
-            loc = await f.location()
-            print(loc)
-    for f in lst:
-        if await f.object_name() == 'Player Object':
-            for x in await f.children(): 
-                print(await x.object_name())
-                for y in await x.children():
-                    print(await y.object_name())
-                if await x.object_name() == 'PetObject':
-                    print(dir(x))
-                    pet = x
-
-     
-    print(await pet.location())
-    print(await pet.maybe_read_type_name())
-    print(await pet.read_value_from_offset(576,'bool'))
-    await pet.write_value_to_offset(576, False, 'bool')
-    while True:
-        await pet.write_xyz(168, loc)
-
-    
-
-        
-    return False
-async def setup(client):
-    print(f"[{remtitle(client.title)}] Activating Hooks")
+async def setup(client): #activates all hooks that it can for a client
+    print(f"[{removeTitle(client.title)}] Activating Hooks")
     await client.activate_hooks(wait_for_ready = False)
     await client.mouse_handler.activate_mouseless()
 
 
 
-async def petcheckvis(client):
-    p = await client.root_window.get_windows_with_name('UsePetPowerButton') 
-    pet = p[0]
-    return await pet.is_visible()
+async def petPowerVisibility(client): #returns if the petpower button is visible
+    return await ((await client.root_window.get_windows_with_name('UsePetPowerButton') )[0]).is_visible()
 
-async def coolcheckvis(client):
+async def cooldownVisibility(client): #returns if the cooldown text is visible
     p = await client.root_window.get_windows_with_name('PetPowerCooldownText') 
     pet = p[0]
-    return await pet.is_visible()
-async def coolno(client):
-    p = await client.root_window.get_windows_with_name('PetPowerCooldownText') 
-    pet = p[0]
-    try:
-        return int(remid(await pet.maybe_text()))
-    except: return 999 # just so if i check a value ik it has come from here
-async def cshopcheckvis(client):
-    try:
-        p = await client.root_window.get_windows_with_name('permanentShop') 
-        pet = p[0]
-        return await pet.is_visible()
+    return await ((await client.root_window.get_windows_with_name('PetPowerCooldownText'))[0]).is_visible()
+
+
+async def crownshopVisibilty(client): #returns if crownshop is visible
+    try: return await ((await client.root_window.get_windows_with_name('permanentShop'))[0]).is_visible()
     except: return False
     
-async def diarun(client):
+async def skipDialogue(client): #skips dialogue boxes if any opened
     while await client.is_in_dialog():
         await asyncio.sleep(0.1)
         await client.send_key(Keycode.SPACEBAR,0.3)
         await asyncio.sleep(0.1)
     
 
-async def azoth_collect(p,length):
-    while length == len(await p.root_window.get_windows_with_name('TipWindow')):
-        await pet_power(p, 0.1)
-        await diarun(p)
+async def azothCollect(client,tipAmount): #collects azoth, uses the number of TipWindows to check if azoth is collected >>> TO BE REPLACED WITH DROP LOGGER
+    while await petPowerVisibility(client):
+        await skipDialogue(client)
+        await petPower(client,0)
+    while tipAmount == len(await client.root_window.get_windows_with_name('TipWindow')):
+        await petPower(client, 0.1)
+        await skipDialogue(client)
         await asyncio.sleep(0.1)
 
-async def snackcheckvis(client):
-    p = await client.root_window.get_windows_with_name('chkSnackCard0') 
-    pet = p[0]
-    return await pet.is_visible()
+async def snackVisibility(client): #checks if a snack is visible in the first snack slot
+    return await ((await client.root_window.get_windows_with_name('chkSnackCard0') )[0]).is_visible()
 
-# list of valid locations:
-loclist = ['<center>Kembaalung Village</center>','<center>Hollow Mountain</center>','<center>Castle Darkmoor</center>',"<center>Regent's Square</center>", "<center>Halley's Observatory</center>"]
 
-async def azothfarm(p,slot):
+
+async def azothFarmer(p,listPosition):
     try:
-        global Azoth_Count
-        global dungeonlist
-        count = 0
+        
         await setup(p)
-        title = p.title
-        total = time()
-        Total_Count = 0
-        wizlst = []
-        halleylst = [] # second list so i can check the wizard and edit the code manually later
-        customlist = []
+        
+        startTime = time()
         await asyncio.sleep(1.5)
-        cont = False
-        while not cont:
+        
+        loggedIn = False
+        while not loggedIn:
             try:
                 await p.send_key(Keycode.TAB, 0.1)
-                loc = (await p.root_window.get_windows_with_name('txtLocation'))[0]
-                cont = True
+                wizLocation = (await p.root_window.get_windows_with_name('txtLocation'))[0]
+                loggedIn = True
             except:
                 continue
         
-        while (not str(await loc.maybe_text()) in loclist) and (not str(await loc.maybe_text()) in dungeonlist) :
+        while not removeTags(str(await wizLocation.maybe_text())) in baseLocationList :
             await p.send_key(Keycode.TAB, 0.1)
-        wiz  = (await p.root_window.get_windows_with_name(rding))[0]
-        while not (await wiz.maybe_text() in wizlst):
-            loc = (await p.root_window.get_windows_with_name('txtLocation'))[0]
-            wiz = (await p.root_window.get_windows_with_name(rding))[0]
-            if await loc.maybe_text() in loclist or await loc.maybe_text() in dungeonlist:
-                wizlst += [str(await wiz.maybe_text())]
-                if await loc.maybe_text() == "<center>Regent's Square</center>" or await loc.maybe_text() ==  "<center>Halley's Observatory</center>": #these are the two special locations 
-                    halleylst += [str(await wiz.maybe_text())]
-                if await loc.maybe_text() in dungeonlist:
-                    customlist += [str(await wiz.maybe_text())]
+        
+        wizard  = wizardInfo(await (await p.root_window.get_windows_with_name('txtName'))[0].maybe_text(),
+                             await (await p.root_window.get_windows_with_name('txtLevel'))[0].maybe_text(),
+                             await (await p.root_window.get_windows_with_name('txtLocation'))[0].maybe_text(),0,0)
+        
+        while not wizard.Name in [wiz.Name for wiz in activeClients[listPosition].wizLst] and not wizard.Level in [wiz.Level for wiz in activeClients[listPosition].wizLst]:
+
+            
+            if removeTags(wizard.Location) in baseLocationList :
+                activeClients[listPosition].wizLst += [copy.deepcopy(wizard)]
+                
 
 
             await p.send_key(Keycode.TAB, 0.1)
-            await asyncio.sleep(0.3) 
-        templst =[]    
-        print(f'[{remtitle(title)}] Is using these wizards:')
-        for x in wizlst:
-            templst += [remid(x)]
-        print(*templst, sep = ", ")
+            await asyncio.sleep(0.3)
+            wizard  = wizardInfo(await (await p.root_window.get_windows_with_name('txtName'))[0].maybe_text(),
+                                await (await p.root_window.get_windows_with_name('txtLevel'))[0].maybe_text(),
+                                await (await p.root_window.get_windows_with_name('txtLocation'))[0].maybe_text(),0,0)
+              
+        print(f'[{activeClients[listPosition].title}] Is using these wizards:')
+        for x in activeClients[listPosition].wizLst:
+            print(x)
+        
+        
+        
         await asyncio.sleep(0.5)
-        failcheck = True
-        while failcheck:
+        failCheck = True
+        while failCheck: #waits for btnPlay window to dissapear
                 
                 if len(await p.root_window.get_windows_with_name('btnPlay')) == 1:
                     try:
@@ -212,36 +211,38 @@ async def azothfarm(p,slot):
                         continue
                     #print('clicking play')
                 else: 
-                    failcheck = False
+                    failCheck = False
                     #print('stopped clicking play')
-                await asyncio.sleep(delay)
+                
 
+        
+        
+        await asyncio.sleep(7)
+        
         if len(await p.root_window.get_windows_with_name('QuitButton')) == 1:
             await p.send_key(Keycode.ESC, 0.1)
         
-        await asyncio.sleep(7)
-        templst= []
-        for x in range(len(wizlst)):
-            templst += [[wizlst[x],'']]
-        wizlst = templst
-        totalwiz = len(wizlst)
-        rnthr = 0
+        
+        originalWizards = len(activeClients[listPosition].wizLst)
+        
+        runthrough = 0 #counter of how many times it has gone through the for loop
         while True:
-            if len(wizlst) ==0:
+            if len(activeClients[listPosition].wizLst) ==0: #if there are no wizards left stop the script
                 break
-            for x in range(len(wizlst)):
-                needswitch = False
+            for position , wizard in enumerate(activeClients[listPosition].wizLst,0):
+                needSwitch = False #True if the wizard needs to be switched (this is if a reagent is detected)
                 
-                if rnthr == 0:
-                    
-                    while await cshopcheckvis(p):
+                if runthrough == 0:
+                    #this checks pet happiness
+                    while await crownshopVisibilty(p):
                         await asyncio.sleep(1)
                         await p.send_key(Keycode.ESC, 0.3)
                         await asyncio.sleep(0.4)
                         await p.send_key(Keycode.ESC, 0.3)
                         await asyncio.sleep(1)
+                    
                     while len(await p.root_window.get_windows_with_name('FeedPetButton')) == 0:
-                        while await cshopcheckvis(p):
+                        while await crownshopVisibilty(p):
                             await asyncio.sleep(1)
                             await p.send_key(Keycode.ESC, 0.3)
                             await asyncio.sleep(0.4)
@@ -251,16 +252,20 @@ async def azothfarm(p,slot):
                             await p.mouse_handler.click_window_with_name('PetSystemButton')
                             await asyncio.sleep(0.1)
                         except:
-                            await asyncio.sleep(0.1)  
+                            await asyncio.sleep(0.1)
+                          
                     while not await (await p.root_window.get_windows_with_name('FeedPetButton'))[0].is_visible() :
                         await p.mouse_handler.click_window_with_name('PetSystemButton')
                         await asyncio.sleep(0.1)
+                    
                     while len(await p.root_window.get_windows_with_name('CloseFeedPetForHappinessWindow')) == 0:
                         await p.mouse_handler.click_window_with_name('FeedPetButton')
                         await asyncio.sleep(0.1)
 
-                    pethappiness = (await p.root_window.get_windows_with_name('HappinessText'))[0]
-                    wizlst[x][1] = remid(await pethappiness.maybe_text())
+                    petHappinessText = (await p.root_window.get_windows_with_name('HappinessText'))[0]
+                    Happiness, totalHappiness = ((removeTags(await petHappinessText.maybe_text())).split('/')) #assign pet happiness to wizard object in the main list
+                    wizard.Happiness, wizard.totalHappiness = int(Happiness), int(totalHappiness)
+                    
                     try:
                         
                         while await (await p.root_window.get_windows_with_name('CloseFeedPetForHappinessWindow'))[0].is_visible():
@@ -268,36 +273,46 @@ async def azothfarm(p,slot):
                             await asyncio.sleep(0.1)
                     except:
                         await asyncio.sleep(0.2)
+
                     while await (await p.root_window.get_windows_with_name('FeedPetButton'))[0].is_visible():
                         await p.mouse_handler.click_window_with_name('PetSystemButton')
                         await asyncio.sleep(0.1)
-                while not needswitch:
-                    if await cshopcheckvis(p):
+                #end of checking pet happiness
+                
+                
+                while not needSwitch:
+                    if await crownshopVisibilty(p):
                         await asyncio.sleep(1)
                         await p.send_key(Keycode.ESC, 0.3)
                         await asyncio.sleep(0.4)
                         await p.send_key(Keycode.ESC, 0.3)
                         await asyncio.sleep(0.5) 
-                    lastazoth = time()
-                    start = time()
-                    print(f'[{remtitle(title)}]: {remid(wizlst[x][0])} has {wizlst[x][1]} happiness')
-                    hapiness,full = ((wizlst[x][1]).split('/'))
-                    kpchar = True
-                    if  int(hapiness) < 5 :
-                        await diarun(p)
-                        print(f'[{remtitle(title)}] Feeding Pet')
-                        kpchar = await refillhappiness(p)
-                        hapiness = full
-                    if kpchar:
+                        
+                    
+                    print(f'[{activeClients[listPosition].title}]: {removeTags(wizard.Name)} has {wizard.Happiness} happiness')
+                    keepWizard = True #defines whether a wizard should be kept
+                    
+                    
+                    if  int(wizard.Happiness) < 5 :
+                        await skipDialogue(p)
+                        print(f'[{activeClients[listPosition].title}] Feeding Pet')
+                        keepWizard = await refillhappiness(p)
+                        wizard.Happiness = wizard.totalHappiness 
+                    
+                    if keepWizard:
                         # Entering Dungeon
 
-                        await asyncio.sleep(delay)
-                        if wizlst[x][0] in customlist:
-                            await before_entry(p)
-                        else:
+                        
+                        locationIndex = baseLocationList.index(removeTags(wizard.Location)) #find the index of the location fo the character
+                        
+                        if not locationList[locationIndex][1] == 'Dungeon': #used to check if the character needs to enter 
+                            await asyncio.sleep(0.3)
+                            
+                        
+                        else: #presses x while waiting to load into dungeon
                             location = await p.zone_name()
                             while location == await p.zone_name():
-                                if await cshopcheckvis(p):
+                                if await crownshopVisibilty(p):
                                     await asyncio.sleep(1)
                                     await p.send_key(Keycode.ESC, 0.3)
                                     await asyncio.sleep(0.4)
@@ -308,120 +323,127 @@ async def azothfarm(p,slot):
                             while await p.is_loading():
                                 await asyncio.sleep(0.3)
                                 await p.send_key(Keycode.X, 0.3)
-                        #t=0
-                        #while await petcheckvis(p) and t <12: #increase this value maybe?
-                        #        await asyncio.sleep(0.3)
-                        #        t+=1
-                        if wizlst[x][0] in halleylst:
-                            #potentially change this to a hard code for a xyz to go to
-                            await p.goto(-3224.598388671875, -1160.1627197265625)
-                            #this is needed to get a 3rd spawn point
-                        if wizlst[x][0] in customlist:
-                            await in_dungeon(p, title)
+                                
+                                
                         collected = False
                         await asyncio.sleep(0.1)
-                        rea, realoc = await portallst(p,title)
-                        if rea and kpchar:
-                            if tp:
-                                bodloc = await p.body.position()
-                                bodloc.z = bodloc.z -1000
+                        
+                        for tpLocation in locationList[locationIndex][2]: #runs check for each location in list
+                            
+                            bodyPosition = await p.body.position()
+                            bodyPosition.z = bodyPosition.z -1000 
+                            await asyncio.sleep(0.2)
+                            await p.teleport(bodyPosition) #teleports wizard down
+                            
+                            if tpLocation == None: #tps to specified location or not depending on whats in .txt
+                                pass
+                            else:
                                 await asyncio.sleep(0.2)
-                                await p.teleport(bodloc)
-                                if wizlst[x][0] in halleylst:
-                                    realoc.z = realoc.z +25
-                                else:
-                                    realoc.z = realoc.z -1000
+                                await p.teleport(XYZ(tpLocation.x, tpLocation.y, tpLocation.z - 1000))
+                                await asyncio.sleep(0.2)
+                        
+                            reagentDetected, reagentLocation = await nearestReagent(p,activeClients[listPosition].title)
+                            
+                            
+                            if reagentDetected and keepWizard:
+                        
+                                reagentLocation.z = reagentLocation.z - 750         
+                                await p.teleport(reagentLocation)
+                                
+                                #updating values
+                                
+                                needSwitch = True
+                                activeClients[listPosition].totalAzothCollected += 1
+                                wizard.Happiness -= 5
+                                
+                                
+
+                                while not await petPowerVisibility(p): #waits for the pet power button to be visible
+                                    await skipDialogue(p)
+                                    await asyncio.sleep(0.2)
+                                
+                                
+
+                                while await cooldownVisibility(p): #waits for the cooldown to dissapear
+                                    await skipDialogue(p)
+                                    await p.send_key(Keycode.D, 0.2)
+                                
+                                tiplen = len(await p.root_window.get_windows_with_name('TipWindow')) #number of tip windows so it can be detected if that number increases
+                                #If you set it to like 10-20 here
+                                await skipDialogue(p)
+                                
+
                                     
-                                
-                                await p.teleport(realoc)
-                            needswitch = True
-                            hapiness = str(int(hapiness)-5)
-
-                            while not await petcheckvis(p):
-                                await diarun(p)
-                                await asyncio.sleep(0.2)
-                            Total_Count += 1
-                            Azoth_Count += 1
-
-                            while await coolcheckvis(p):
-                                await diarun(p)
-                                await p.send_key(Keycode.D, 0.2)
-                            tiplen = len(await p.root_window.get_windows_with_name('TipWindow'))
-                            #If you set it to like 10-20 here
-                            await asyncio.sleep(delay)
-                            await diarun(p)
-                            
 
                                 
 
-                            
-                            while await petcheckvis(p):
-                                await diarun(p)
-                                await pet_power(p,delay)
-                                await asyncio.sleep(delay)
-                            collected =  True
-                            try: 
-                                await asyncio.wait_for(azoth_collect(p,tiplen), 8) 
-                            except: 
-                                print(print(f'[{remtitle(title)}]-Failsafe activated quit without azoth, DM this to milwr to ruin his day'))
+                                    
+                                collected =  True
+                                try: 
+                                    await asyncio.wait_for(azothCollect(p,tiplen), 8) #waits for 8 seconds for the azoth to be collected
+                                except: 
+                                    print(print(f'[{activeClients[listPosition].title}]-Failsafe activated quit without azoth, DM this to milwr to ruin his day'))
 
 
-                            #then stop it here it should get the benefit of the speed and none of the risk
 
 
-                            await diarun(p)
-                            lastazoth = time()
+                                await skipDialogue(p)
                     
                     
-                    wizlst[x][1] =  hapiness +'/' + full
 
-                    try:
-                        nxtwiz = wizlst[(x+1)][0]
+                    try:  #logic for picking next wizard
+                        nextWizard = activeClients[listPosition].wizLst[position+1] 
                     except IndexError:
-                        nxtwiz = wizlst[0][0]
+                        nextWizard = activeClients[listPosition].wizLst[0]
                     await asyncio.sleep(0.2)
-                    if not kpchar:
-                        needswitch =True
+                    
+                    if not keepWizard: #if we arent keeping the wizard we need it to switch
+                        needSwitch =True
 
-                    await logout_and_in(p,nxtwiz,needswitch,title)
-                    if not kpchar:
+                    await logout_and_in(p,nextWizard,needSwitch,activeClients[listPosition].title)
+                    
+                    if not keepWizard: #breaks out of for loop to restart it
                         break
                     
-                    await asyncio.sleep(delay)
-                    if collected:
-                        count += 1
-                        p.title = title + ' [Azoth Collected: ' + str(count) + ', Active Time: ' + str(round((time() - total) / 60, 2)) +', Using '+ str(len(wizlst)) +'/' + str(totalwiz)+ ' wizards' + ']'
-                    activetasks[slot] = True
+                    
+                    p.title = activeClients[listPosition].title + ' [Azoth Collected: ' + str(activeClients[listPosition].totalAzothCollected) + ', Active Time: ' + str(round((time() - startTime) / 60, 2)) +', Using '+ str(len(activeClients[listPosition].wizLst)) +'/' + str(originalWizards)+ ' wizards' + ']'
+                    
                     # Time
                     print("------------------------------------------------------")
-                    print("The Total Amount of Azoth is: ", Azoth_Count)
-                    print("Time Taken for run: ", round((time() - start) / 60, 2), "minutes")
-                    print("Total time elapsed: ", round((time() - total) / 60, 2), "minutes")
-                    print('Time since last azoth is: ', round((time() - lastazoth) / 60, 2))
-        
+                    print("The Total Amount of Azoth is: ", sum([x.totalAzothCollected for x in activeClients]))
+                    print("Time Taken for run: ", activeClients[listPosition].timeSinceBotAction, "seconds")
+                    print("Total time elapsed: ", round((time() - startTime) / 60, 2), "minutes")
                     print("------------------------------------------------------")
+                    
+                    #update BotAction
+                    activeClients[listPosition].timeSinceBotAction = 0
                 
-                if not kpchar:
-                    print(f'[{remtitle(title)}] Removing Wizard From List: {remid(wizlst[x][0])}' )
-                    if len(wizlst) != 1:
-                        newfirst = wizlst[x:]
-                        newlast = wizlst[:x]
-                        wizlst = newfirst + newlast
-                        wizlst.pop(x)
+                
+                
+                if not keepWizard:
+                    activeClients[listPosition].timeSinceBotAction = 0
+                    print(f'[{activeClients[listPosition].title}] Removing Wizard From List: {wizard}' )
+                    
+                    
+                    if len(activeClients[listPosition].wizLst) != 1:  #changes list to start from current next wizard then remove the wizard
+                        newFirst = activeClients[listPosition].wizLst[position:]
+                        newLast = activeClients[listPosition].wizLst[:position]
+                        activeClients[listPosition].wizLst = newFirst + newLast
+                        activeClients[listPosition].wizLst.pop(position)
                     else:
-                        wizlst.pop(x)
+                        activeClients[listPosition].wizLst.pop(position)
                         pass
                     break
-            if kpchar:
-                rnthr += 1
+            if keepWizard:
+                runthrough += 1
     finally:
         import traceback
         traceback.print_exc()
-        raise RuntimeError (f'[{remtitle(title)}] is brokey')
+        raise RuntimeError (f'[{activeClients[listPosition].title}] is brokey')
 
 
 
-async def azothchk(p):
+async def azothCheck(p): #checks how many tip windows there are
     e = 0
     c = await p.root_window.get_windows_with_name('TipWindow')
     for x in c:
@@ -437,32 +459,34 @@ async def azothchk(p):
         return False
 
 
-async def logout_and_in(client,nxtwiz,needswitch,title):
+async def logout_and_in(client,nextWizard,needSwitch,title):
         #fail check is used multiple times as it is what i have called the variable that ends the button pressing loops
         failcheck = True
-        print(f'[{remtitle(title)}] Logging out and in')
-        await diarun(client)
+        print(f'[{title}] Logging out and in')
+        await skipDialogue(client)
         await asyncio.sleep(0.1)
         await client.send_key(Keycode.ESC, 0.1)
         await asyncio.sleep(0.1)
 
+
+        #basic idea here is it will keep pressing the button until it detects something that means it can move onto the next part in logging out
+        
         while failcheck: 
             try:
                 await client.mouse_handler.click_window_with_name('QuitButton')
                 failcheck = False
             
             except ValueError:
-                #await asyncio.sleep(0.5)
                 await client.send_key(Keycode.ESC, 0.1) 
         
-        await asyncio.sleep(delay)
+        
         failcheck = True
         while failcheck:
             try:
                 await client.mouse_handler.click_window_with_name('QuitButton')
                 print('quitbtn')
             except ValueError:
-                await asyncio.sleep(delay)
+                
 
                 failcheck = False
         failcheck = True 
@@ -470,10 +494,10 @@ async def logout_and_in(client,nxtwiz,needswitch,title):
             try:
                 await client.mouse_handler.click_window_with_name('centerButton') 
                 failcheck = False
-                await asyncio.sleep(delay)
+                
                 await client.mouse_handler.click_window_with_name('centerButton') 
             except ValueError:
-                await asyncio.sleep(delay)
+                
                 #print('noplaybtn')
                 if len(await client.root_window.get_windows_with_name('btnPlay')) == 1:
                     #print('playbtn')
@@ -484,27 +508,39 @@ async def logout_and_in(client,nxtwiz,needswitch,title):
         
                 
             
-
+        failcheck = True
+        while failcheck:
+            
+            if len(await client.root_window.get_windows_with_name('btnPlay')) == 0:
+                try:
+                    pass
+                except:
+                    continue
+            else: 
+                failcheck = False
 
 
                 
-        await asyncio.sleep(delay)
+        
         failcheck =True
-        f= True
-        while failcheck:
+        while failcheck and needSwitch: #switching wizard logic
             try:
                 switch = True
-                if needswitch and f :
-                    print(f'[{remtitle(title)}] Switching Wizard To: {remid(nxtwiz)}' )
-                    f= False
-                p = await client.root_window.get_windows_with_name(rding) 
-                a = p[0]
-                while switch and needswitch:
-                        if needswitch:
+                print(f'[{title}] Switching Wizard To: {nextWizard}' )
+                    
+                
+                    
+                
+                while switch :
+                        if needSwitch:
                             await client.send_key(Keycode.TAB, 0.1)
-                            await asyncio.sleep((delay*3))
-                        a = (await client.root_window.get_windows_with_name(rding))[0]
-                        if await a.maybe_text() == nxtwiz:
+                            await asyncio.sleep(0.2)
+                        
+                        wizard  = wizardInfo(await (await client.root_window.get_windows_with_name('txtName'))[0].maybe_text(),
+                             await (await client.root_window.get_windows_with_name('txtLevel'))[0].maybe_text(),
+                             await (await client.root_window.get_windows_with_name('txtLocation'))[0].maybe_text(),0,0)
+                        
+                        if wizard.Name == nextWizard.Name and wizard.Level == nextWizard.Level:
                             switch = False
                     
                 
@@ -515,7 +551,7 @@ async def logout_and_in(client,nxtwiz,needswitch,title):
             except IndexError :
                 await asyncio.sleep(1)
 
-        await asyncio.sleep(delay)
+        
         failcheck = True
         while failcheck:
             
@@ -524,43 +560,36 @@ async def logout_and_in(client,nxtwiz,needswitch,title):
                     await client.mouse_handler.click_window_with_name('btnPlay')
                 except:
                     continue
-                #print('clicking play')
             else: 
                 failcheck = False
-                #print('stopped clicking play')
-            await asyncio.sleep(delay)
+            
 
         await client.wait_for_zone_change()
         await asyncio.sleep(0.5)
-        await asyncio.sleep(delay)
+        
         if len(await client.root_window.get_windows_with_name('QuitButton')) == 1:
             await client.send_key(Keycode.ESC, 0.1)
 
-async def runmanager(p,slot):
-    slot = slot - 1
-    title = p.title
-    global activetasks
-    global acctlst
+async def runmanager(listPosition):
+    
+    p = Client(activeClients[listPosition].handle)
+    
+    
+    
     while True:
         try:
-            run = asyncio.create_task(azothfarm(p,slot))
+            run = asyncio.create_task(azothFarmer(p,listPosition))
             while True:
-                cnt = 0
-                activetasks[slot] = False
-            #    try:
-            #        run = asyncio.create_task(azothfarm(p))
-            #    except:
-            #        continue
-                while activetasks[slot] == False:
+                
+                while activeClients[listPosition].timeSinceBotAction < 150: #basic counter waits 150 seconds 
                     await asyncio.sleep(1)
-                    cnt+= 1
-                    if cnt == 150:
-                        print(f'[{remtitle(title)}] Has stopped producing azoth, restarting')
-                        break
-                if cnt == 150:
-                    break
+                    activeClients[listPosition].timeSinceBotAction += 1
+                
+                
+                print(f'[{activeClients[listPosition].title}] Has stopped producing azoth, restarting')
+                break
         except:
-            print('running failed')
+            print(f'[{activeClients[listPosition].title}] Has failed during farming, printing error')
             import traceback
             traceback.print_exc()
             await asyncio.sleep(0)
@@ -570,65 +599,63 @@ async def runmanager(p,slot):
             await asyncio.sleep(0)
         await p.close()
         try:
-            subprocess.call(f"taskkill /F /PID {p.process_id}",stdout=subprocess.DEVNULL)
+            subprocess.call(f"taskkill /F /PID {p.process_id}",stdout=subprocess.DEVNULL) #kills the current wizard client
         except:
             await asyncio.sleep(0)
         await asyncio.sleep(3)
         p = None
-        if lgn:
-            handles = get_all_wizard_handles()
-            start_instance()
-            await asyncio.sleep(6)
-            while p == None:
+        handles = get_all_wizard_handles()
+        start_instance()
+        await asyncio.sleep(6)
+        while p == None:
                 try:
-                    handle = list(set(get_all_wizard_handles()).difference(handles))[0]
+                    activeClients[listPosition].handle = list(set(get_all_wizard_handles()).difference(handles))[0]
                     
-                    instance_login(handle, acctlst[slot][0], acctlst[slot][1])
-                    p = Client(handle)
+                    instance_login(activeClients[listPosition].handle, activeClients[listPosition].username, activeClients[listPosition].password)
+                    p = Client(activeClients[listPosition].handle)
                 except:
                     await asyncio.sleep(0.5)
             
             
-            p.title = 'AzothFarm: Bot ' + str(slot+1)
-        else: break
+        p.title = 'AzothFarm: ' + activeClients[listPosition].title
 
 
 
 
-acctlst=[]
 
 async def main(sprinter):
-    global activetasks
-    global acctlst
-    global Azoth_Count
-    Azoth_Count = 0
     # Register clients
     print('Azoth Farm Bot AKA Milwrs emotional crisis')
-    print("Credits: Hailtothethrone- the original bot, Nitsuj- discovery of Halley's observatory")
-    print('Fix the azoth economy- Set ur price to 8 emp per azoth to try and bring the price back up to 7')
-    print('15/16$ per stack for monetary sales (can go a bit lower since they are harder to do)')
-
-    if lgn:
-        with open("accounts.txt") as my_file:
-            acctlst = [
-                line.strip().split(":") for line in my_file.read().split("\n")
+    print("""Credits: Hailtothethrone- the original bot,
+          Nitsuj- discovery of Halley's observatory,
+          Ultimate- fuck you, thanks for the help""")
+    with open("accounts.txt") as my_file:
+            accountList = [
+                line.strip().split(":") for line in my_file.read().split("\n") #reads account list and puts into into a list
                 ]
-        async with asyncio.TaskGroup() as tg:
-            for x in range(len(acctlst)):
+    async with asyncio.TaskGroup() as tg: #so it waits for every client to finish
+            for x in range(len(accountList)):
                 handles = get_all_wizard_handles()
                 start_instance()
                 await asyncio.sleep(10)
-                rnthr = True
-                while rnthr:
+                runthrough = True
+                while runthrough:
                     try:
-                        handle = list(set(get_all_wizard_handles()).difference(handles))[0]
-                        instance_login(handle, acctlst[x][0], acctlst[x][1])
-                        p = Client(handle)
+                        handle = list(set(get_all_wizard_handles()).difference(handles))[0] #finds the new handle made by start_instance()
+                        instance_login(handle, accountList[x][0], accountList[x][1])
+                        p = Client(handle) #defines a client
                         p.title = 'AzothFarm: Bot ' + str(x+1)
-                        activetasks.append(False)
-                        tg.create_task(runmanager(p,x+1))
                         
-                        rnthr = False
+                        activeClients.append( clientInfo(username = accountList[x][0],
+                                                        password = accountList[x][1],
+                                                        handle = handle, wizLst = [],
+                                                        title = f'Bot {str(x+1)}',
+                                                        totalAzothCollected = 0,
+                                                        timeSinceBotAction = 0)) #setting up client info
+                        
+                        tg.create_task(runmanager(x))
+                        
+                        runthrough = False
 
                     except:
                         await asyncio.sleep(0.5)
@@ -637,26 +664,6 @@ async def main(sprinter):
             
     
 
-    
-
-    else:
-        sprinter.get_new_clients()
-        clients = sprinter.get_ordered_clients()
-        non_hooked_clients = []
-        for client in clients:
-            if not "p" in client.title:
-                non_hooked_clients.append(client)
-        clients = non_hooked_clients
-
-        await asyncio.sleep(1)
-
-
-        for i, p in enumerate(clients, 1):
-            p.title = 'AzothFarm: Bot ' + str(i)
-            activetasks.append(False)
-
-    
-        await asyncio.gather(*[runmanager(p,i) for i, p in enumerate(clients, 1)])
     
 
 
@@ -675,7 +682,7 @@ async def refillhappiness(p):
             await asyncio.sleep(0.1)        
 
 
-        happiness = remid(await ((await p.root_window.get_windows_with_name('HappinessText'))[0]).maybe_text())
+        happiness = removeTags(await ((await p.root_window.get_windows_with_name('HappinessText'))[0]).maybe_text())
 
 
         
@@ -684,8 +691,8 @@ async def refillhappiness(p):
             await asyncio.sleep(0.2)
             await p.mouse_handler.click_window_with_name('FeedStackOfSnacksButton')
             await asyncio.sleep(0.2)
-            happiness = remid(await ((await p.root_window.get_windows_with_name('HappinessText'))[0]).maybe_text())
-            if not await snackcheckvis(p):
+            happiness = removeTags(await ((await p.root_window.get_windows_with_name('HappinessText'))[0]).maybe_text())
+            if not await snackVisibility(p):
                 while len(await p.root_window.get_windows_with_name('CloseFeedPetForHappinessWindow')) == 1:
                     await p.mouse_handler.click_window_with_name('CloseFeedPetForHappinessWindow')
                     await asyncio.sleep(0.1)
