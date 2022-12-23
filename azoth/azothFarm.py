@@ -5,7 +5,6 @@ import copy
 from time import time
 from wizwalker.constants import Keycode
 from wizwalker.utils import get_all_wizard_handles, start_instance, instance_login
-from modulardungeon import before_entry, in_dungeon, dungeonlist
 from wizwalker import Client, XYZ
 
 
