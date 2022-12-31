@@ -72,13 +72,17 @@ async def realmswitch(p):
                 await p.mouse_handler.click_window_with_name('btnRealmRight')
         if await (await p.root_window.get_windows_with_name(f"txtRealm{currentrealm[1]}Population"))[0].maybe_text() != '' and await (await p.root_window.get_windows_with_name(f"txtRealm{currentrealm[1]}Name"))[0].maybe_text() !=  await (await p.root_window.get_windows_with_name("txtYourRealmName"))[0].maybe_text():
             realmselected = True
-            while await (await p.root_window.get_windows_with_name(f"txtRealm{currentrealm[1]}Population"))[0].is_visible():
-                try:
-                    await p.mouse_handler.click_window_with_name(f"txtRealm{currentrealm[1]}Population")
-                    await asyncio.sleep(1)
-                    await p.mouse_handler.click_window_with_name("btnGoToRealm")
-                except:
-                    break
+            try:
+                while await (await p.root_window.get_windows_with_name(f"txtRealm{currentrealm[1]}Population"))[0].is_visible():
+                    try:
+                        await p.mouse_handler.click_window_with_name(f"txtRealm{currentrealm[1]}Population")
+                        await asyncio.sleep(1)
+                        await p.mouse_handler.click_window_with_name("btnGoToRealm")
+                    except:
+                        break
+            except:
+                break
+                
         else:
             currentrealm[1] -= 1
             if currentrealm[1] == -1:
@@ -91,6 +95,7 @@ async def realmswitch(p):
 
 
 async def portentities(client):
+    await client.hook_handler.activate_all_hooks()
     filelst = glob.glob('**/*.txt')
     filelst = [s.replace('Zones\\', '') for s in filelst]
     if  str(await client.zone_name()).replace('/','-') + '.txt' in filelst:
@@ -128,12 +133,10 @@ async def portentities(client):
 
 async def main():
     walker = wizwalker.WizWalker()
-    client = walker.get_new_clients()[0]
+    clients = walker.get_new_clients()
     try:
         print("Preparing")
-        await client.hook_handler.activate_all_hooks()
-        while True:
-            await portentities(client)
+        asyncio.gather(portentities(client) for client in clients)
         
     finally:
         print("Closing")
