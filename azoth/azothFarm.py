@@ -28,6 +28,9 @@ class wizardInfo: #contains all information of a wizard needed for differentiati
         self.totalHappiness = totalHappiness
     def __str__(self):
         return f'{removeTags(self.Name)} the {removeTags(self.Level)} in {removeTags(self.Location)}'
+    def __eq__(self, other) : 
+        return self.Name == other.Name and self.Level == other.Level
+
 
 
 #list that will contain every client
@@ -179,8 +182,7 @@ async def azothFarmer(p,listPosition):
                              await (await p.root_window.get_windows_with_name('txtLevel'))[0].maybe_text(),
                              await (await p.root_window.get_windows_with_name('txtLocation'))[0].maybe_text(),0,0)
         
-        while not wizard.Name in [wiz.Name for wiz in activeClients[listPosition].wizLst] and not wizard.Level in [wiz.Level for wiz in activeClients[listPosition].wizLst]:
-
+        while not wizard in [wiz for wiz in activeClients[listPosition].wizLst]:                     
             
             if removeTags(wizard.Location) in baseLocationList :
                 activeClients[listPosition].wizLst += [copy.deepcopy(wizard)]
@@ -340,8 +342,12 @@ async def azothFarmer(p,listPosition):
                                 await asyncio.sleep(0.2)
                                 await p.teleport(XYZ(tpLocation.x, tpLocation.y, tpLocation.z - 1000))
                                 await asyncio.sleep(0.2)
-                        
-                            reagentDetected, reagentLocation = await nearestReagent(p,activeClients[listPosition].title)
+                            while True:
+                                try:
+                                    reagentDetected, reagentLocation = await nearestReagent(p,activeClients[listPosition].title)
+                                except:
+                                    break
+                                
                             
                             
                             if reagentDetected and keepWizard:
@@ -387,6 +393,7 @@ async def azothFarmer(p,listPosition):
 
 
                                 await skipDialogue(p)
+                                break
                     
                     
 
@@ -539,7 +546,7 @@ async def logout_and_in(client,nextWizard,needSwitch,title):
                              await (await client.root_window.get_windows_with_name('txtLevel'))[0].maybe_text(),
                              await (await client.root_window.get_windows_with_name('txtLocation'))[0].maybe_text(),0,0)
                         
-                        if wizard.Name == nextWizard.Name and wizard.Level == nextWizard.Level:
+                        if wizard == nextWizard:
                             switch = False
                     
                 
