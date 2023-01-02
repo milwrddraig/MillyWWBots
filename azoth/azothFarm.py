@@ -345,8 +345,9 @@ async def azothFarmer(p,listPosition):
                             while True:
                                 try:
                                     reagentDetected, reagentLocation = await nearestReagent(p,activeClients[listPosition].title)
-                                except:
                                     break
+                                except:
+                                    pass
                                 
                             
                             
