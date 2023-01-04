@@ -505,11 +505,14 @@ async def logout_and_in(client,nextWizard,needSwitch,title):
         while switch :
                 if needSwitch:
                     await client.send_key(Keycode.TAB, 0)
-                        
-                wizard  = wizardInfo(await (await window_from_path(client.root_window, txtName)).maybe_text(),
+                try:        
+                    wizard  = wizardInfo(await (await window_from_path(client.root_window, txtName)).maybe_text(),
                              await (await window_from_path(client.root_window, txtLevel)).maybe_text(),
                              await (await window_from_path(client.root_window, txtLocation)).maybe_text(),0,0)
+                except:
+                    pass
                         
+                
                 if wizard == nextWizard:
                     switch = False
                     
