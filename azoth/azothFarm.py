@@ -437,38 +437,18 @@ async def azothFarmer(p,listPosition):
                 runthrough += 1
     finally:
         dialogueChecker.cancel()
-        failcheck = True
-        while failcheck: 
-            try:
-                await p.mouse_handler.click_window_with_name('QuitButton')
-                failcheck = False
-            
-            except ValueError:
-                await p.send_key(Keycode.ESC, 0.1) 
-        
-        
-        failcheck = True
-        while failcheck:
-            try:
-                await p.mouse_handler.click_window_with_name('QuitButton')
-                print('quitbtn')
-            except ValueError:
-                
+        await p.send_key(Keycode.ESC, 0)
 
-                failcheck = False
-        failcheck = True 
-        while failcheck:
-            try:
-                await p.mouse_handler.click_window_with_name('centerButton') 
-                failcheck = False
-                
-                await p.mouse_handler.click_window_with_name('centerButton') 
-            except ValueError:
-                
-                #print('noplaybtn')
-                if len(await p.root_window.get_windows_with_name('btnPlay')) == 1:
-                    #print('playbtn')
-                    failcheck = False
+
+        #basic idea here is it will keep pressing the button until it detects something that means it can move onto the next part in logging out
+        await click_window_until_gone(p, quitButton)
+        
+        while not await is_visible_by_path(p.root_window, logOutConfirm):
+            if await is_visible_by_path(p.root_window, playButton):
+                break 
+        await click_window_until_gone(p, logOutConfirm)           
+        while not(await is_visible_by_path(p.root_window, playButton)): pass
+
         import traceback
         traceback.print_exc()
         raise RuntimeError (f'[{activeClients[listPosition].title}] is brokey')
