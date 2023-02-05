@@ -476,18 +476,19 @@ async def logout_and_in(client,nextWizard,needSwitch,title):
         #fail check is used multiple times as it is what i have called the variable that ends the button pressing loops
         
         print(f'[{title}] Logging out and in')
-        await client.send_key(Keycode.ESC, 0)
+        await client.send_key(Keycode.ESC, 0.1)
 
 
         #basic idea here is it will keep pressing the button until it detects something that means it can move onto the next part in logging out
         await click_window_until_gone(client, quitButton)
         
         
-        while not await is_visible_by_path(client.root_window, logOutConfirm):
+        while not (needConfirm := await is_visible_by_path(client.root_window, logOutConfirm)):
+            await asyncio.sleep(0.1)
             if await is_visible_by_path(client.root_window, playButton):
                 break
         
-        await click_window_until_gone(client, logOutConfirm)        
+        if needConfirm: await click_window_until_gone(client, logOutConfirm)        
 
 
         
