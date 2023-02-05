@@ -195,7 +195,7 @@ async def skipDialogue(client): #skips dialogue boxes if any opened
 
 async def azothCollect(client,tipAmount): #collects azoth, uses the number of TipWindows to check if azoth is collected >>> TO BE REPLACED WITH DROP LOGGER
     while await petPowerVisibility(client):
-        await petPower(client,0)
+        await petPower(client,0.05)
     while tipAmount == len(await client.root_window.get_windows_with_name('TipWindow')):
         await petPower(client, 0.1)
         await asyncio.sleep(0.1)
