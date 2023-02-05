@@ -111,6 +111,7 @@ async def click_window_from_path(mouse_handler, base_window, path): #credit ulti
 async def click_window_until_gone(client, path): #i did this im very cool
     while (window := await window_from_path(client.root_window, path)) and await is_visible_by_path(client.root_window, path):
             await client.mouse_handler.click_window(window)
+            await asyncio.sleep(0.1)
         
 
 
