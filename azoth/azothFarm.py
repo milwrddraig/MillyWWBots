@@ -185,6 +185,12 @@ async def skipDialogue(client): #skips dialogue boxes if any opened
         await asyncio.sleep(0.2)
         while await client.is_in_dialog():
             await client.send_key(Keycode.SPACEBAR,0)
+        while await crownshopVisibilty(client):
+            await asyncio.sleep(1)
+            await client.send_key(Keycode.ESC, 0.3)
+            await asyncio.sleep(0.4)
+            await client.send_key(Keycode.ESC, 0.3)
+            await asyncio.sleep(1)
     
 
 async def azothCollect(client,tipAmount): #collects azoth, uses the number of TipWindows to check if azoth is collected >>> TO BE REPLACED WITH DROP LOGGER
