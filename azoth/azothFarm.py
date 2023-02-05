@@ -9,7 +9,6 @@ from wizwalker import Client, XYZ
 from wizwalker.memory import Window
 
 
-#test
 
 class clientInfo: #contains all information needed for a client to run
     def __init__(self, username: str, password: str, handle, title: str, wizLst: list, totalAzothCollected: int, timeSinceBotAction: int):
