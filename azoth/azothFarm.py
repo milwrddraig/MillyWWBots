@@ -497,11 +497,9 @@ async def logout_and_in(client,nextWizard,needSwitch,title):
         
         if needConfirm: await click_window_until_gone(client, logOutConfirm)        
 
-
         
                 
-        while not(await is_visible_by_path(client.root_window, playButton)): pass
-
+        while not(await is_visible_by_path(client.root_window, playButton)): await asyncio.sleep(0.1)
 
                 
         
@@ -511,9 +509,8 @@ async def logout_and_in(client,nextWizard,needSwitch,title):
         if needSwitch: print(f'[{title}] Switching Wizard To: {nextWizard}' )
             
         switch = True        
-        while switch :
-                if needSwitch:
-                    await client.send_key(Keycode.TAB, 0)
+        while switch and needSwitch:
+                await client.send_key(Keycode.TAB, 0.05)
                 try:        
                     wizard  = wizardInfo(await (await window_from_path(client.root_window, txtName)).maybe_text(),
                              await (await window_from_path(client.root_window, txtLevel)).maybe_text(),
@@ -562,10 +559,14 @@ async def runmanager(listPosition):
             await asyncio.sleep(0)
         try:
             run.cancel()
+            noProcesses = len(asyncio.all_tasks())
+            while noProcesses == len(asyncio.all_tasks()):
+                asyncio.sleep(0.3)
         finally:
             await asyncio.sleep(6)
             pass
         await p.close()
+
         try:
             subprocess.call(f"taskkill /F /PID {p.process_id}",stdout=subprocess.DEVNULL) #kills the current wizard client
         except:
