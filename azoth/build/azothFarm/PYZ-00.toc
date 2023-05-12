@@ -1,0 +1,1422 @@
+('C:\\Users\\Mark '
+ 'Liney\\Documents\\Programs\\Millywwbots\\MillyWWBots\\azoth\\build\\azothFarm\\PYZ-00.pyz',
+ [('pkgutil',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\pkgutil.py',
+   'PYMODULE'),
+  ('zipimport',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\zipimport.py',
+   'PYMODULE'),
+  ('importlib.readers',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\importlib\\readers.py',
+   'PYMODULE'),
+  ('importlib.resources.readers',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\importlib\\resources\\readers.py',
+   'PYMODULE'),
+  ('importlib.resources._itertools',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\importlib\\resources\\_itertools.py',
+   'PYMODULE'),
+  ('typing',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\typing.py',
+   'PYMODULE'),
+  ('contextlib',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\contextlib.py',
+   'PYMODULE'),
+  ('importlib.resources.abc',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\importlib\\resources\\abc.py',
+   'PYMODULE'),
+  ('importlib.resources',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\importlib\\resources\\__init__.py',
+   'PYMODULE'),
+  ('importlib.resources._legacy',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\importlib\\resources\\_legacy.py',
+   'PYMODULE'),
+  ('importlib.resources._common',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\importlib\\resources\\_common.py',
+   'PYMODULE'),
+  ('importlib.resources._adapters',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\importlib\\resources\\_adapters.py',
+   'PYMODULE'),
+  ('tempfile',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\tempfile.py',
+   'PYMODULE'),
+  ('random',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\random.py',
+   'PYMODULE'),
+  ('statistics',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\statistics.py',
+   'PYMODULE'),
+  ('decimal',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\decimal.py',
+   'PYMODULE'),
+  ('_pydecimal',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\_pydecimal.py',
+   'PYMODULE'),
+  ('contextvars',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\contextvars.py',
+   'PYMODULE'),
+  ('fractions',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\fractions.py',
+   'PYMODULE'),
+  ('numbers',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\numbers.py',
+   'PYMODULE'),
+  ('hashlib',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\hashlib.py',
+   'PYMODULE'),
+  ('logging',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\logging\\__init__.py',
+   'PYMODULE'),
+  ('pickle',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\pickle.py',
+   'PYMODULE'),
+  ('pprint',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\pprint.py',
+   'PYMODULE'),
+  ('dataclasses',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\dataclasses.py',
+   'PYMODULE'),
+  ('_compat_pickle',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\_compat_pickle.py',
+   'PYMODULE'),
+  ('struct',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\struct.py',
+   'PYMODULE'),
+  ('threading',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\threading.py',
+   'PYMODULE'),
+  ('_threading_local',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\_threading_local.py',
+   'PYMODULE'),
+  ('string',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\string.py',
+   'PYMODULE'),
+  ('bisect',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\bisect.py',
+   'PYMODULE'),
+  ('shutil',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\shutil.py',
+   'PYMODULE'),
+  ('tarfile',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\tarfile.py',
+   'PYMODULE'),
+  ('argparse',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\argparse.py',
+   'PYMODULE'),
+  ('textwrap',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\textwrap.py',
+   'PYMODULE'),
+  ('gettext',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\gettext.py',
+   'PYMODULE'),
+  ('gzip',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\gzip.py',
+   'PYMODULE'),
+  ('_compression',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\_compression.py',
+   'PYMODULE'),
+  ('lzma',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\lzma.py',
+   'PYMODULE'),
+  ('bz2',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\bz2.py',
+   'PYMODULE'),
+  ('zipfile',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\zipfile.py',
+   'PYMODULE'),
+  ('py_compile',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\py_compile.py',
+   'PYMODULE'),
+  ('importlib._bootstrap_external',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\importlib\\_bootstrap_external.py',
+   'PYMODULE'),
+  ('importlib.metadata',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\importlib\\metadata\\__init__.py',
+   'PYMODULE'),
+  ('importlib.abc',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\importlib\\abc.py',
+   'PYMODULE'),
+  ('importlib._abc',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\importlib\\_abc.py',
+   'PYMODULE'),
+  ('importlib._bootstrap',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\importlib\\_bootstrap.py',
+   'PYMODULE'),
+  ('importlib.metadata._itertools',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\importlib\\metadata\\_itertools.py',
+   'PYMODULE'),
+  ('importlib.metadata._functools',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\importlib\\metadata\\_functools.py',
+   'PYMODULE'),
+  ('importlib.metadata._collections',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\importlib\\metadata\\_collections.py',
+   'PYMODULE'),
+  ('importlib.metadata._meta',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\importlib\\metadata\\_meta.py',
+   'PYMODULE'),
+  ('importlib.metadata._adapters',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\importlib\\metadata\\_adapters.py',
+   'PYMODULE'),
+  ('importlib.metadata._text',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\importlib\\metadata\\_text.py',
+   'PYMODULE'),
+  ('email.message',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\email\\message.py',
+   'PYMODULE'),
+  ('email.policy',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\email\\policy.py',
+   'PYMODULE'),
+  ('email.contentmanager',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\email\\contentmanager.py',
+   'PYMODULE'),
+  ('email.quoprimime',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\email\\quoprimime.py',
+   'PYMODULE'),
+  ('email.headerregistry',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\email\\headerregistry.py',
+   'PYMODULE'),
+  ('email._header_value_parser',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\email\\_header_value_parser.py',
+   'PYMODULE'),
+  ('email.iterators',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\email\\iterators.py',
+   'PYMODULE'),
+  ('email.generator',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\email\\generator.py',
+   'PYMODULE'),
+  ('email._encoded_words',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\email\\_encoded_words.py',
+   'PYMODULE'),
+  ('base64',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\base64.py',
+   'PYMODULE'),
+  ('getopt',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\getopt.py',
+   'PYMODULE'),
+  ('email.charset',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\email\\charset.py',
+   'PYMODULE'),
+  ('email.encoders',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\email\\encoders.py',
+   'PYMODULE'),
+  ('email.base64mime',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\email\\base64mime.py',
+   'PYMODULE'),
+  ('email._policybase',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\email\\_policybase.py',
+   'PYMODULE'),
+  ('email.header',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\email\\header.py',
+   'PYMODULE'),
+  ('email.errors',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\email\\errors.py',
+   'PYMODULE'),
+  ('email.utils',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\email\\utils.py',
+   'PYMODULE'),
+  ('email._parseaddr',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\email\\_parseaddr.py',
+   'PYMODULE'),
+  ('calendar',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\calendar.py',
+   'PYMODULE'),
+  ('datetime',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\datetime.py',
+   'PYMODULE'),
+  ('_strptime',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\_strptime.py',
+   'PYMODULE'),
+  ('socket',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\socket.py',
+   'PYMODULE'),
+  ('selectors',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\selectors.py',
+   'PYMODULE'),
+  ('quopri',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\quopri.py',
+   'PYMODULE'),
+  ('email',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\email\\__init__.py',
+   'PYMODULE'),
+  ('email.parser',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\email\\parser.py',
+   'PYMODULE'),
+  ('email.feedparser',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\email\\feedparser.py',
+   'PYMODULE'),
+  ('csv',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\csv.py',
+   'PYMODULE'),
+  ('inspect',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\inspect.py',
+   'PYMODULE'),
+  ('dis',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\dis.py',
+   'PYMODULE'),
+  ('opcode',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\opcode.py',
+   'PYMODULE'),
+  ('ast',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\ast.py',
+   'PYMODULE'),
+  ('importlib.machinery',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\importlib\\machinery.py',
+   'PYMODULE'),
+  ('importlib.util',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\importlib\\util.py',
+   'PYMODULE'),
+  ('importlib',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\importlib\\__init__.py',
+   'PYMODULE'),
+  ('multiprocessing.popen_spawn_posix',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\multiprocessing\\popen_spawn_posix.py',
+   'PYMODULE'),
+  ('multiprocessing.resource_tracker',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\multiprocessing\\resource_tracker.py',
+   'PYMODULE'),
+  ('signal',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\signal.py',
+   'PYMODULE'),
+  ('multiprocessing.util',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\multiprocessing\\util.py',
+   'PYMODULE'),
+  ('multiprocessing.forkserver',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\multiprocessing\\forkserver.py',
+   'PYMODULE'),
+  ('multiprocessing.connection',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\multiprocessing\\connection.py',
+   'PYMODULE'),
+  ('multiprocessing.resource_sharer',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\multiprocessing\\resource_sharer.py',
+   'PYMODULE'),
+  ('xmlrpc.client',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\xmlrpc\\client.py',
+   'PYMODULE'),
+  ('xmlrpc',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\xmlrpc\\__init__.py',
+   'PYMODULE'),
+  ('xml.parsers.expat',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\xml\\parsers\\expat.py',
+   'PYMODULE'),
+  ('xml.parsers',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\xml\\parsers\\__init__.py',
+   'PYMODULE'),
+  ('xml',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\xml\\__init__.py',
+   'PYMODULE'),
+  ('xml.sax.expatreader',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\xml\\sax\\expatreader.py',
+   'PYMODULE'),
+  ('xml.sax.saxutils',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\xml\\sax\\saxutils.py',
+   'PYMODULE'),
+  ('xml.sax',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\xml\\sax\\__init__.py',
+   'PYMODULE'),
+  ('xml.sax.handler',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\xml\\sax\\handler.py',
+   'PYMODULE'),
+  ('xml.sax._exceptions',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\xml\\sax\\_exceptions.py',
+   'PYMODULE'),
+  ('xml.sax.xmlreader',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\xml\\sax\\xmlreader.py',
+   'PYMODULE'),
+  ('http.client',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\http\\client.py',
+   'PYMODULE'),
+  ('ssl',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\ssl.py',
+   'PYMODULE'),
+  ('http',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\http\\__init__.py',
+   'PYMODULE'),
+  ('hmac',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\hmac.py',
+   'PYMODULE'),
+  ('multiprocessing.process',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\multiprocessing\\process.py',
+   'PYMODULE'),
+  ('multiprocessing.context',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\multiprocessing\\context.py',
+   'PYMODULE'),
+  ('multiprocessing.popen_forkserver',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\multiprocessing\\popen_forkserver.py',
+   'PYMODULE'),
+  ('multiprocessing.sharedctypes',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\multiprocessing\\sharedctypes.py',
+   'PYMODULE'),
+  ('multiprocessing.heap',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\multiprocessing\\heap.py',
+   'PYMODULE'),
+  ('ctypes',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\ctypes\\__init__.py',
+   'PYMODULE'),
+  ('ctypes.wintypes',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\ctypes\\wintypes.py',
+   'PYMODULE'),
+  ('ctypes._endian',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\ctypes\\_endian.py',
+   'PYMODULE'),
+  ('multiprocessing.pool',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\multiprocessing\\pool.py',
+   'PYMODULE'),
+  ('multiprocessing.dummy',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\multiprocessing\\dummy\\__init__.py',
+   'PYMODULE'),
+  ('multiprocessing.dummy.connection',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\multiprocessing\\dummy\\connection.py',
+   'PYMODULE'),
+  ('queue',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\queue.py',
+   'PYMODULE'),
+  ('multiprocessing.queues',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\multiprocessing\\queues.py',
+   'PYMODULE'),
+  ('multiprocessing.synchronize',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\multiprocessing\\synchronize.py',
+   'PYMODULE'),
+  ('multiprocessing.managers',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\multiprocessing\\managers.py',
+   'PYMODULE'),
+  ('multiprocessing.shared_memory',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\multiprocessing\\shared_memory.py',
+   'PYMODULE'),
+  ('secrets',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\secrets.py',
+   'PYMODULE'),
+  ('multiprocessing.reduction',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\multiprocessing\\reduction.py',
+   'PYMODULE'),
+  ('multiprocessing.popen_fork',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\multiprocessing\\popen_fork.py',
+   'PYMODULE'),
+  ('multiprocessing.popen_spawn_win32',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\multiprocessing\\popen_spawn_win32.py',
+   'PYMODULE'),
+  ('multiprocessing.spawn',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\multiprocessing\\spawn.py',
+   'PYMODULE'),
+  ('runpy',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\runpy.py',
+   'PYMODULE'),
+  ('multiprocessing',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\multiprocessing\\__init__.py',
+   'PYMODULE'),
+  ('tracemalloc',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\tracemalloc.py',
+   'PYMODULE'),
+  ('stringprep',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\stringprep.py',
+   'PYMODULE'),
+  ('_py_abc',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\_py_abc.py',
+   'PYMODULE'),
+  ('getpass',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\getpass.py',
+   'PYMODULE'),
+  ('nturl2path',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\nturl2path.py',
+   'PYMODULE'),
+  ('ftplib',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\ftplib.py',
+   'PYMODULE'),
+  ('netrc',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\netrc.py',
+   'PYMODULE'),
+  ('shlex',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\shlex.py',
+   'PYMODULE'),
+  ('mimetypes',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\mimetypes.py',
+   'PYMODULE'),
+  ('http.cookiejar',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\http\\cookiejar.py',
+   'PYMODULE'),
+  ('wizwalker.memory',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\wizwalker\\memory\\__init__.py',
+   'PYMODULE'),
+  ('wizwalker.memory.instance_finder',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\wizwalker\\memory\\instance_finder.py',
+   'PYMODULE'),
+  ('regex',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\regex\\__init__.py',
+   'PYMODULE'),
+  ('regex.regex',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\regex\\regex.py',
+   'PYMODULE'),
+  ('regex._regex_core',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\regex\\_regex_core.py',
+   'PYMODULE'),
+  ('wizwalker.memory.memory_objects',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\wizwalker\\memory\\memory_objects\\__init__.py',
+   'PYMODULE'),
+  ('wizwalker.memory.memory_objects.camera_controller',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\wizwalker\\memory\\memory_objects\\camera_controller.py',
+   'PYMODULE'),
+  ('wizwalker.memory.memory_objects.gamebryo_camera',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\wizwalker\\memory\\memory_objects\\gamebryo_camera.py',
+   'PYMODULE'),
+  ('wizwalker.memory.memory_objects.cam_view',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\wizwalker\\memory\\memory_objects\\cam_view.py',
+   'PYMODULE'),
+  ('wizwalker.memory.memory_objects.game_client',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\wizwalker\\memory\\memory_objects\\game_client.py',
+   'PYMODULE'),
+  ('wizwalker.memory.memory_objects.gamebryo_presenter',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\wizwalker\\memory\\memory_objects\\gamebryo_presenter.py',
+   'PYMODULE'),
+  ('wizwalker.memory.memory_objects.scene_manager',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\wizwalker\\memory\\memory_objects\\scene_manager.py',
+   'PYMODULE'),
+  ('wizwalker.memory.memory_objects.character_registry',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\wizwalker\\memory\\memory_objects\\character_registry.py',
+   'PYMODULE'),
+  ('wizwalker.memory.memory_objects.teleport_helper',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\wizwalker\\memory\\memory_objects\\teleport_helper.py',
+   'PYMODULE'),
+  ('wizwalker.memory.memory_objects.behavior_instance',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\wizwalker\\memory\\memory_objects\\behavior_instance.py',
+   'PYMODULE'),
+  ('wizwalker.memory.memory_objects.behavior_template',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\wizwalker\\memory\\memory_objects\\behavior_template.py',
+   'PYMODULE'),
+  ('wizwalker.memory.memory_objects.game_object_template',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\wizwalker\\memory\\memory_objects\\game_object_template.py',
+   'PYMODULE'),
+  ('wizwalker.memory.memory_objects.play_deck',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\wizwalker\\memory\\memory_objects\\play_deck.py',
+   'PYMODULE'),
+  ('wizwalker.memory.memory_objects.combat_resolver',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\wizwalker\\memory\\memory_objects\\combat_resolver.py',
+   'PYMODULE'),
+  ('wizwalker.memory.memory_objects.render_context',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\wizwalker\\memory\\memory_objects\\render_context.py',
+   'PYMODULE'),
+  ('wizwalker.memory.memory_objects.window',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\wizwalker\\memory\\memory_objects\\window.py',
+   'PYMODULE'),
+  ('loguru',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\loguru\\__init__.py',
+   'PYMODULE'),
+  ('loguru._logger',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\loguru\\_logger.py',
+   'PYMODULE'),
+  ('loguru._simple_sinks',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\loguru\\_simple_sinks.py',
+   'PYMODULE'),
+  ('loguru._recattrs',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\loguru\\_recattrs.py',
+   'PYMODULE'),
+  ('loguru._locks_machinery',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\loguru\\_locks_machinery.py',
+   'PYMODULE'),
+  ('loguru._handler',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\loguru\\_handler.py',
+   'PYMODULE'),
+  ('json',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\json\\__init__.py',
+   'PYMODULE'),
+  ('json.encoder',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\json\\encoder.py',
+   'PYMODULE'),
+  ('json.decoder',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\json\\decoder.py',
+   'PYMODULE'),
+  ('json.scanner',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\json\\scanner.py',
+   'PYMODULE'),
+  ('loguru._get_frame',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\loguru\\_get_frame.py',
+   'PYMODULE'),
+  ('loguru._file_sink',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\loguru\\_file_sink.py',
+   'PYMODULE'),
+  ('loguru._ctime_functions',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\loguru\\_ctime_functions.py',
+   'PYMODULE'),
+  ('win32_setctime',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\win32_setctime.py',
+   'PYMODULE'),
+  ('glob',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\glob.py',
+   'PYMODULE'),
+  ('loguru._error_interceptor',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\loguru\\_error_interceptor.py',
+   'PYMODULE'),
+  ('loguru._datetime',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\loguru\\_datetime.py',
+   'PYMODULE'),
+  ('loguru._colorizer',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\loguru\\_colorizer.py',
+   'PYMODULE'),
+  ('loguru._better_exceptions',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\loguru\\_better_exceptions.py',
+   'PYMODULE'),
+  ('sysconfig',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\sysconfig.py',
+   'PYMODULE'),
+  ('_aix_support',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\_aix_support.py',
+   'PYMODULE'),
+  ('_bootsubprocess',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\_bootsubprocess.py',
+   'PYMODULE'),
+  ('loguru._string_parsers',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\loguru\\_string_parsers.py',
+   'PYMODULE'),
+  ('loguru._filters',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\loguru\\_filters.py',
+   'PYMODULE'),
+  ('loguru._colorama',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\loguru\\_colorama.py',
+   'PYMODULE'),
+  ('colorama',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\colorama\\__init__.py',
+   'PYMODULE'),
+  ('colorama.ansitowin32',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\colorama\\ansitowin32.py',
+   'PYMODULE'),
+  ('colorama.winterm',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\colorama\\winterm.py',
+   'PYMODULE'),
+  ('colorama.ansi',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\colorama\\ansi.py',
+   'PYMODULE'),
+  ('colorama.initialise',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\colorama\\initialise.py',
+   'PYMODULE'),
+  ('colorama.win32',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\colorama\\win32.py',
+   'PYMODULE'),
+  ('loguru._defaults',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\loguru\\_defaults.py',
+   'PYMODULE'),
+  ('wizwalker.memory.memory_objects.spell',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\wizwalker\\memory\\memory_objects\\spell.py',
+   'PYMODULE'),
+  ('wizwalker.memory.memory_objects.spell_template',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\wizwalker\\memory\\memory_objects\\spell_template.py',
+   'PYMODULE'),
+  ('wizwalker.memory.memory_objects.spell_effect',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\wizwalker\\memory\\memory_objects\\spell_effect.py',
+   'PYMODULE'),
+  ('wizwalker.memory.memory_objects.quest_position',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\wizwalker\\memory\\memory_objects\\quest_position.py',
+   'PYMODULE'),
+  ('wizwalker.memory.memory_objects.game_stats',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\wizwalker\\memory\\memory_objects\\game_stats.py',
+   'PYMODULE'),
+  ('wizwalker.memory.memory_objects.enums',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\wizwalker\\memory\\memory_objects\\enums.py',
+   'PYMODULE'),
+  ('wizwalker.memory.memory_objects.duel',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\wizwalker\\memory\\memory_objects\\duel.py',
+   'PYMODULE'),
+  ('wizwalker.errors',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\wizwalker\\errors.py',
+   'PYMODULE'),
+  ('wizwalker.memory.memory_objects.combat_participant',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\wizwalker\\memory\\memory_objects\\combat_participant.py',
+   'PYMODULE'),
+  ('wizwalker.memory.memory_objects.pip_count',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\wizwalker\\memory\\memory_objects\\pip_count.py',
+   'PYMODULE'),
+  ('wizwalker.memory.memory_objects.client_duel_manager',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\wizwalker\\memory\\memory_objects\\client_duel_manager.py',
+   'PYMODULE'),
+  ('wizwalker.memory.memory_objects.client_object',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\wizwalker\\memory\\memory_objects\\client_object.py',
+   'PYMODULE'),
+  ('wizwalker.memory.memory_objects.client_zone',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\wizwalker\\memory\\memory_objects\\client_zone.py',
+   'PYMODULE'),
+  ('wizwalker.memory.memory_objects.actor_body',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\wizwalker\\memory\\memory_objects\\actor_body.py',
+   'PYMODULE'),
+  ('wizwalker.memory.memory_reader',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\wizwalker\\memory\\memory_reader.py',
+   'PYMODULE'),
+  ('pymem.ressources.structure',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\pymem\\ressources\\structure.py',
+   'PYMODULE'),
+  ('pymem.ressources.advapi32',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\pymem\\ressources\\advapi32.py',
+   'PYMODULE'),
+  ('pymem.ressources',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\pymem\\ressources\\__init__.py',
+   'PYMODULE'),
+  ('unittest.mock',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\unittest\\mock.py',
+   'PYMODULE'),
+  ('unittest',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\unittest\\__init__.py',
+   'PYMODULE'),
+  ('unittest.async_case',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\unittest\\async_case.py',
+   'PYMODULE'),
+  ('unittest.signals',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\unittest\\signals.py',
+   'PYMODULE'),
+  ('unittest.main',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\unittest\\main.py',
+   'PYMODULE'),
+  ('unittest.runner',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\unittest\\runner.py',
+   'PYMODULE'),
+  ('unittest.loader',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\unittest\\loader.py',
+   'PYMODULE'),
+  ('unittest.suite',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\unittest\\suite.py',
+   'PYMODULE'),
+  ('unittest.case',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\unittest\\case.py',
+   'PYMODULE'),
+  ('unittest._log',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\unittest\\_log.py',
+   'PYMODULE'),
+  ('difflib',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\difflib.py',
+   'PYMODULE'),
+  ('unittest.result',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\unittest\\result.py',
+   'PYMODULE'),
+  ('unittest.util',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\unittest\\util.py',
+   'PYMODULE'),
+  ('pymem.ressources.ntdll',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\pymem\\ressources\\ntdll.py',
+   'PYMODULE'),
+  ('pymem.ressources.psapi',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\pymem\\ressources\\psapi.py',
+   'PYMODULE'),
+  ('pymem.process',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\pymem\\process.py',
+   'PYMODULE'),
+  ('pymem.ressources.kernel32',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\pymem\\ressources\\kernel32.py',
+   'PYMODULE'),
+  ('pymem.exception',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\pymem\\exception.py',
+   'PYMODULE'),
+  ('pymem',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\pymem\\__init__.py',
+   'PYMODULE'),
+  ('pymem.pattern',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\pymem\\pattern.py',
+   'PYMODULE'),
+  ('pymem.thread',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\pymem\\thread.py',
+   'PYMODULE'),
+  ('pymem.memory',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\pymem\\memory.py',
+   'PYMODULE'),
+  ('platform',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\platform.py',
+   'PYMODULE'),
+  ('ctypes.util',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\ctypes\\util.py',
+   'PYMODULE'),
+  ('ctypes._aix',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\ctypes\\_aix.py',
+   'PYMODULE'),
+  ('ctypes.macholib.dyld',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\ctypes\\macholib\\dyld.py',
+   'PYMODULE'),
+  ('ctypes.macholib',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\ctypes\\macholib\\__init__.py',
+   'PYMODULE'),
+  ('ctypes.macholib.dylib',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\ctypes\\macholib\\dylib.py',
+   'PYMODULE'),
+  ('ctypes.macholib.framework',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\ctypes\\macholib\\framework.py',
+   'PYMODULE'),
+  ('pefile',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\pefile.py',
+   'PYMODULE'),
+  ('ordlookup',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\ordlookup\\__init__.py',
+   'PYMODULE'),
+  ('ordlookup.oleaut32',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\ordlookup\\oleaut32.py',
+   'PYMODULE'),
+  ('ordlookup.ws2_32',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\ordlookup\\ws2_32.py',
+   'PYMODULE'),
+  ('__future__',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\__future__.py',
+   'PYMODULE'),
+  ('wizwalker.memory.memory_object',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\wizwalker\\memory\\memory_object.py',
+   'PYMODULE'),
+  ('wizwalker.memory.hooks',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\wizwalker\\memory\\hooks.py',
+   'PYMODULE'),
+  ('wizwalker.memory.handler',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\wizwalker\\memory\\handler.py',
+   'PYMODULE'),
+  ('wizwalker.utils',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\wizwalker\\utils.py',
+   'PYMODULE'),
+  ('appdirs',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\appdirs.py',
+   'PYMODULE'),
+  ('wizwalker.constants',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\wizwalker\\constants.py',
+   'PYMODULE'),
+  ('copy',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\copy.py',
+   'PYMODULE'),
+  ('wizwalker',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\wizwalker\\__init__.py',
+   'PYMODULE'),
+  ('wizwalker.hotkey',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\wizwalker\\hotkey.py',
+   'PYMODULE'),
+  ('janus',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\janus\\__init__.py',
+   'PYMODULE'),
+  ('wizwalker.application',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\wizwalker\\application.py',
+   'PYMODULE'),
+  ('wizwalker.client_handler',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\wizwalker\\client_handler.py',
+   'PYMODULE'),
+  ('wizwalker.client',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\wizwalker\\client.py',
+   'PYMODULE'),
+  ('wizwalker.mouse_handler',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\wizwalker\\mouse_handler.py',
+   'PYMODULE'),
+  ('wizwalker.file_readers',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\wizwalker\\file_readers\\__init__.py',
+   'PYMODULE'),
+  ('wizwalker.file_readers.wad',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\wizwalker\\file_readers\\wad.py',
+   'PYMODULE'),
+  ('aiofiles',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\aiofiles\\__init__.py',
+   'PYMODULE'),
+  ('aiofiles.tempfile',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\aiofiles\\tempfile\\__init__.py',
+   'PYMODULE'),
+  ('aiofiles.tempfile.temptypes',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\aiofiles\\tempfile\\temptypes.py',
+   'PYMODULE'),
+  ('aiofiles.threadpool.utils',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\aiofiles\\threadpool\\utils.py',
+   'PYMODULE'),
+  ('aiofiles.threadpool.binary',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\aiofiles\\threadpool\\binary.py',
+   'PYMODULE'),
+  ('aiofiles.threadpool.text',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\aiofiles\\threadpool\\text.py',
+   'PYMODULE'),
+  ('aiofiles.base',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\aiofiles\\base.py',
+   'PYMODULE'),
+  ('aiofiles.threadpool',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\aiofiles\\threadpool\\__init__.py',
+   'PYMODULE'),
+  ('wizwalker.file_readers.nif',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\wizwalker\\file_readers\\nif.py',
+   'PYMODULE'),
+  ('wizwalker.file_readers.cache_handler',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\wizwalker\\file_readers\\cache_handler.py',
+   'PYMODULE'),
+  ('wizwalker.combat',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\wizwalker\\combat\\__init__.py',
+   'PYMODULE'),
+  ('wizwalker.combat.handler',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\wizwalker\\combat\\handler.py',
+   'PYMODULE'),
+  ('wizwalker.combat.member',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\wizwalker\\combat\\member.py',
+   'PYMODULE'),
+  ('wizwalker.combat.card',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\wizwalker\\combat\\card.py',
+   'PYMODULE'),
+  ('wizwalker.cli',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\wizwalker\\cli\\__init__.py',
+   'PYMODULE'),
+  ('wizwalker.cli.console',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\wizwalker\\cli\\console.py',
+   'PYMODULE'),
+  ('aiomonitor.utils',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\aiomonitor\\utils.py',
+   'PYMODULE'),
+  ('aiomonitor.mypy_types',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\aiomonitor\\mypy_types.py',
+   'PYMODULE'),
+  ('concurrent.futures',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\concurrent\\futures\\__init__.py',
+   'PYMODULE'),
+  ('concurrent.futures.thread',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\concurrent\\futures\\thread.py',
+   'PYMODULE'),
+  ('concurrent.futures.process',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\concurrent\\futures\\process.py',
+   'PYMODULE'),
+  ('concurrent.futures._base',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\concurrent\\futures\\_base.py',
+   'PYMODULE'),
+  ('concurrent',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\concurrent\\__init__.py',
+   'PYMODULE'),
+  ('telnetlib',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\telnetlib.py',
+   'PYMODULE'),
+  ('aiomonitor.cli',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\aiomonitor\\cli.py',
+   'PYMODULE'),
+  ('aiomonitor.monitor',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\aiomonitor\\monitor.py',
+   'PYMODULE'),
+  ('aiomonitor',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\aiomonitor\\__init__.py',
+   'PYMODULE'),
+  ('terminaltables',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\terminaltables\\__init__.py',
+   'PYMODULE'),
+  ('terminaltables.other_tables',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\terminaltables\\other_tables.py',
+   'PYMODULE'),
+  ('terminaltables.terminal_io',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\terminaltables\\terminal_io.py',
+   'PYMODULE'),
+  ('terminaltables.github_table',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\terminaltables\\github_table.py',
+   'PYMODULE'),
+  ('terminaltables.build',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\terminaltables\\build.py',
+   'PYMODULE'),
+  ('terminaltables.width_and_alignment',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\terminaltables\\width_and_alignment.py',
+   'PYMODULE'),
+  ('terminaltables.ascii_table',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\terminaltables\\ascii_table.py',
+   'PYMODULE'),
+  ('terminaltables.base_table',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\terminaltables\\base_table.py',
+   'PYMODULE'),
+  ('aioconsole',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\aioconsole\\__init__.py',
+   'PYMODULE'),
+  ('aioconsole.apython',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\aioconsole\\apython.py',
+   'PYMODULE'),
+  ('rlcompleter',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\rlcompleter.py',
+   'PYMODULE'),
+  ('aioconsole.rlwrap',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\aioconsole\\rlwrap.py',
+   'PYMODULE'),
+  ('aioconsole.command',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\aioconsole\\command.py',
+   'PYMODULE'),
+  ('aioconsole.events',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\aioconsole\\events.py',
+   'PYMODULE'),
+  ('aioconsole.server',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\aioconsole\\server.py',
+   'PYMODULE'),
+  ('aioconsole.console',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\aioconsole\\console.py',
+   'PYMODULE'),
+  ('codeop',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\codeop.py',
+   'PYMODULE'),
+  ('pydoc',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\pydoc.py',
+   'PYMODULE'),
+  ('webbrowser',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\webbrowser.py',
+   'PYMODULE'),
+  ('http.server',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\http\\server.py',
+   'PYMODULE'),
+  ('socketserver',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\socketserver.py',
+   'PYMODULE'),
+  ('html',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\html\\__init__.py',
+   'PYMODULE'),
+  ('html.entities',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\html\\entities.py',
+   'PYMODULE'),
+  ('pydoc_data.topics',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\pydoc_data\\topics.py',
+   'PYMODULE'),
+  ('pydoc_data',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\pydoc_data\\__init__.py',
+   'PYMODULE'),
+  ('tty',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\tty.py',
+   'PYMODULE'),
+  ('code',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\code.py',
+   'PYMODULE'),
+  ('aioconsole.stream',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\aioconsole\\stream.py',
+   'PYMODULE'),
+  ('aioconsole.compat',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\aioconsole\\compat.py',
+   'PYMODULE'),
+  ('aioconsole.execute',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\aioconsole\\execute.py',
+   'PYMODULE'),
+  ('asyncio',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\asyncio\\__init__.py',
+   'PYMODULE'),
+  ('asyncio.unix_events',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\asyncio\\unix_events.py',
+   'PYMODULE'),
+  ('asyncio.log',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\asyncio\\log.py',
+   'PYMODULE'),
+  ('asyncio.windows_events',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\asyncio\\windows_events.py',
+   'PYMODULE'),
+  ('asyncio.windows_utils',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\asyncio\\windows_utils.py',
+   'PYMODULE'),
+  ('asyncio.selector_events',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\asyncio\\selector_events.py',
+   'PYMODULE'),
+  ('asyncio.proactor_events',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\asyncio\\proactor_events.py',
+   'PYMODULE'),
+  ('asyncio.base_subprocess',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\asyncio\\base_subprocess.py',
+   'PYMODULE'),
+  ('asyncio.threads',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\asyncio\\threads.py',
+   'PYMODULE'),
+  ('asyncio.timeouts',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\asyncio\\timeouts.py',
+   'PYMODULE'),
+  ('asyncio.taskgroups',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\asyncio\\taskgroups.py',
+   'PYMODULE'),
+  ('asyncio.subprocess',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\asyncio\\subprocess.py',
+   'PYMODULE'),
+  ('asyncio.streams',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\asyncio\\streams.py',
+   'PYMODULE'),
+  ('asyncio.queues',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\asyncio\\queues.py',
+   'PYMODULE'),
+  ('asyncio.runners',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\asyncio\\runners.py',
+   'PYMODULE'),
+  ('asyncio.base_events',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\asyncio\\base_events.py',
+   'PYMODULE'),
+  ('asyncio.trsock',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\asyncio\\trsock.py',
+   'PYMODULE'),
+  ('asyncio.staggered',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\asyncio\\staggered.py',
+   'PYMODULE'),
+  ('asyncio.tasks',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\asyncio\\tasks.py',
+   'PYMODULE'),
+  ('asyncio.locks',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\asyncio\\locks.py',
+   'PYMODULE'),
+  ('asyncio.base_tasks',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\asyncio\\base_tasks.py',
+   'PYMODULE'),
+  ('asyncio.mixins',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\asyncio\\mixins.py',
+   'PYMODULE'),
+  ('asyncio.sslproto',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\asyncio\\sslproto.py',
+   'PYMODULE'),
+  ('asyncio.transports',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\asyncio\\transports.py',
+   'PYMODULE'),
+  ('asyncio.protocols',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\asyncio\\protocols.py',
+   'PYMODULE'),
+  ('asyncio.futures',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\asyncio\\futures.py',
+   'PYMODULE'),
+  ('asyncio.base_futures',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\asyncio\\base_futures.py',
+   'PYMODULE'),
+  ('asyncio.exceptions',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\asyncio\\exceptions.py',
+   'PYMODULE'),
+  ('asyncio.events',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\asyncio\\events.py',
+   'PYMODULE'),
+  ('asyncio.format_helpers',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\asyncio\\format_helpers.py',
+   'PYMODULE'),
+  ('asyncio.coroutines',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\asyncio\\coroutines.py',
+   'PYMODULE'),
+  ('asyncio.constants',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\asyncio\\constants.py',
+   'PYMODULE'),
+  ('subprocess',
+   'C:\\Users\\Mark '
+   'Liney\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\subprocess.py',
+   'PYMODULE')])

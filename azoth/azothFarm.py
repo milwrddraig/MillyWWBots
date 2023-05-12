@@ -593,7 +593,7 @@ async def runmanager(listPosition):
 
 
 
-async def main(sprinter):
+async def main():
     # Register clients
     print('Azoth Farm Bot AKA Milwrs emotional crisis')
     print("""Credits: Hailtothethrone- the original bot,
@@ -677,14 +677,12 @@ async def refillhappiness(p):
             
     # Error Handling
 async def run():
-        sprinter = wizwalker.WizWalker()
         try:
-            await main(sprinter)
+            await main()
         except:
          import traceback
          traceback.print_exc()
 
-        await sprinter.close()
         input('Pls ss this error')
 if __name__ == "__main__":
         asyncio.run(run())
