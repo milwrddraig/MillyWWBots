@@ -1,6 +1,5 @@
 import subprocess
 import asyncio
-import wizwalker
 import copy
 from time import time
 from wizwalker.constants import Keycode
@@ -138,7 +137,6 @@ async def nearestReagent(client,title): #returns a boolean for whether a reagent
         if await entity.object_name() in reagents:
             print(f'[{removeTitle(title)}] Reagent Detected:', await entity.object_name())
             reagentList += [entity]
-        await asyncio.sleep(0)
     if len(reagentList)== 0 :
         return False, None
     else: 
@@ -451,7 +449,7 @@ async def azothFarmer(p,listPosition):
         await click_window_until_gone(p, quitButton)
         
         while not await is_visible_by_path(p.root_window, logOutConfirm):
-            asyncio.sleep(0.1)
+            await asyncio.sleep(0.1)
             if await is_visible_by_path(p.root_window, playButton):
                 break 
         await click_window_until_gone(p, logOutConfirm)           
