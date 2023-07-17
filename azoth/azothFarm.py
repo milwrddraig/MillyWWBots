@@ -451,7 +451,7 @@ async def azothFarmer(p,listPosition):
         await click_window_until_gone(p, quitButton)
         
         while not await is_visible_by_path(p.root_window, logOutConfirm):
-            asyncio.sleep(0.1)
+            await asyncio.sleep(0.1)
             if await is_visible_by_path(p.root_window, playButton):
                 break 
         await click_window_until_gone(p, logOutConfirm)           
@@ -472,7 +472,7 @@ async def azothCheck(p): #checks how many tip windows there are
                 if await y.name() == 'ControlSprite':
                     e+=1
         except:
-            await asyncio.sleep(0)
+            await asyncio.sleep(0.1)
     if e>0:
         return True
     else:
@@ -561,7 +561,7 @@ async def runmanager(listPosition):
             run.cancel()
             noProcesses = len(asyncio.all_tasks())
             while noProcesses == len(asyncio.all_tasks()):
-                asyncio.sleep(0.3)
+                await asyncio.sleep(0.3)
         finally:
             await asyncio.sleep(6)
             pass
