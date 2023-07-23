@@ -319,7 +319,6 @@ async def azothFarmer(p,listPosition):
                         if not locationList[locationIndex][1] == 'Dungeon': #used to check if the character needs to enter 
                             await asyncio.sleep(0.3)
                             
-                        se ti
                         
                         else: #presses x while waiting to load into dungeon
                             location = await p.zone_name()
