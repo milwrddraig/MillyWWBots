@@ -194,11 +194,13 @@ async def skipDialogue(client): #skips dialogue boxes if any opened
     
 
 async def azothCollect(client,tipAmount): #collects azoth, uses the number of TipWindows to check if azoth is collected >>> TO BE REPLACED WITH DROP LOGGER
+
+
     while await petPowerVisibility(client):
         await petPower(client,0.05)
-    while not ' You received: Azoth' in await (await client.window_from_path(client.root_window, chatWindowPath)).maybe_text()
-        await petPower(client, 0.1)
-        await asyncio.sleep(0.1)
+    while not 'You received: Azoth' in await (await window_from_path(client.root_window, chatWindowPath)).maybe_text():
+        await petPower(client, 0.05)
+        await asyncio.sleep(0.05)
 
 async def snackVisibility(client): #checks if a snack is visible in the first snack slot
     return await is_visible_by_path(client.root_window, snackCard0)

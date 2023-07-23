@@ -1,2 +1,3 @@
 Kembaalung Village:Hollow Mountain|Dungeon|
+Nightside:Sunken City|Dungeon|-6717.3837890625, 6108.28515625, -377.80865478515625:4269.2373046875, 10003.0615234375, -377.7810974121094
 Location Name:Alternate Dungeon Name (some dont have)|Dungeon/Location|x1,y1,z1:x2,y2,z2 (this can be empty if you want it to just check at the enterance)
