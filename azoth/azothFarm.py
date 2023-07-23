@@ -252,7 +252,7 @@ async def azothFarmer(p,listPosition):
         await asyncio.sleep(8.5)
         
         if await is_visible_by_path(p.root_window, quitButton):
-            await p.send_key(Keycode.ESC, 0)
+            await p.send_key(Keycode.ESC, 0.05)
         
         
         originalWizards = len(activeClients[listPosition].wizLst)
@@ -319,19 +319,21 @@ async def azothFarmer(p,listPosition):
                         if not locationList[locationIndex][1] == 'Dungeon': #used to check if the character needs to enter 
                             await asyncio.sleep(0.3)
                             
+                        se ti
                         
                         else: #presses x while waiting to load into dungeon
                             location = await p.zone_name()
                             while location == await p.zone_name():
-                                if await crownshopVisibilty(p):
-                                    await asyncio.sleep(1)
-                                    await p.send_key(Keycode.ESC, 0.3)
-                                    await asyncio.sleep(0.4)
-                                    await p.send_key(Keycode.ESC, 0.3)
-                                    await asyncio.sleep(1)
-                                await p.send_key(Keycode.X, 0)
-                            while await p.is_loading():
-                                await p.send_key(Keycode.X, 1)
+                                while location == await p.zone_name():
+                                    if await crownshopVisibilty(p):
+                                        await asyncio.sleep(1)
+                                        await p.send_key(Keycode.ESC, 0.3)
+                                        await asyncio.sleep(0.4)
+                                        await p.send_key(Keycode.ESC, 0.3)
+                                        await asyncio.sleep(1)
+                                    await p.send_key(Keycode.X, 0.1)
+                                while await p.is_loading():
+                                    await p.send_key(Keycode.X, 0.1)
                                 
                                 
                         
