@@ -59,6 +59,8 @@ txtLocation  = ['WorldView', 'mainWindow', 'sprSubBanner', 'txtLocation']
 txtLevel = ['WorldView', 'mainWindow', 'sprSubBanner', 'txtLevel']
 txtName  = ['WorldView', 'mainWindow', 'sprBanner', 'txtName']
 playButton = ['WorldView', 'mainWindow', 'btnPlay']
+chatWindowPath = ['WorldView', 'WizardChatBox', 'chatContainer', 'chatLogContainer', 'chatLogInnerContainer', 'chatLog']
+
 
 
 
@@ -194,7 +196,7 @@ async def skipDialogue(client): #skips dialogue boxes if any opened
 async def azothCollect(client,tipAmount): #collects azoth, uses the number of TipWindows to check if azoth is collected >>> TO BE REPLACED WITH DROP LOGGER
     while await petPowerVisibility(client):
         await petPower(client,0.05)
-    while tipAmount == len(await client.root_window.get_windows_with_name('TipWindow')):
+    while not ' You received: Azoth' in await (await client.window_from_path(client.root_window, chatWindowPath)).maybe_text()
         await petPower(client, 0.1)
         await asyncio.sleep(0.1)
 
@@ -250,7 +252,7 @@ async def azothFarmer(p,listPosition):
         await asyncio.sleep(8.5)
         
         if await is_visible_by_path(p.root_window, quitButton):
-            await p.send_key(Keycode.ESC, 0)
+            await p.send_key(Keycode.ESC, 0.05)
         
         
         originalWizards = len(activeClients[listPosition].wizLst)
@@ -321,15 +323,16 @@ async def azothFarmer(p,listPosition):
                         else: #presses x while waiting to load into dungeon
                             location = await p.zone_name()
                             while location == await p.zone_name():
-                                if await crownshopVisibilty(p):
-                                    await asyncio.sleep(1)
-                                    await p.send_key(Keycode.ESC, 0.3)
-                                    await asyncio.sleep(0.4)
-                                    await p.send_key(Keycode.ESC, 0.3)
-                                    await asyncio.sleep(1)
-                                await p.send_key(Keycode.X, 0)
-                            while await p.is_loading():
-                                await p.send_key(Keycode.X, 1)
+                                while location == await p.zone_name():
+                                    if await crownshopVisibilty(p):
+                                        await asyncio.sleep(1)
+                                        await p.send_key(Keycode.ESC, 0.3)
+                                        await asyncio.sleep(0.4)
+                                        await p.send_key(Keycode.ESC, 0.3)
+                                        await asyncio.sleep(1)
+                                    await p.send_key(Keycode.X, 0.1)
+                                while await p.is_loading():
+                                    await p.send_key(Keycode.X, 0.1)
                                 
                                 
                         
@@ -470,7 +473,7 @@ async def azothCheck(p): #checks how many tip windows there are
                 if await y.name() == 'ControlSprite':
                     e+=1
         except:
-            await asyncio.sleep(0)
+            await asyncio.sleep(0.1)
     if e>0:
         return True
     else:
@@ -559,7 +562,7 @@ async def runmanager(listPosition):
             run.cancel()
             noProcesses = len(asyncio.all_tasks())
             while noProcesses == len(asyncio.all_tasks()):
-                asyncio.sleep(0.3)
+                await asyncio.sleep(0.3)
         finally:
             await asyncio.sleep(6)
             pass
